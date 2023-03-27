@@ -49,7 +49,7 @@ app.delete("/todos/:id", async (req, res) => {
 });
 
 mongoose.connect(
-  "mongodb://<username>:<password>mongodb:27017/todos-app",
+  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/todos-app`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
