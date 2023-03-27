@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req,res) => { 
-  res.send("POTANGINA Mo")
+  res.send("Hello Guys!")
 })
 
 app.get("/todos", async (req, res) => {
@@ -49,7 +49,7 @@ app.delete("/todos/:id", async (req, res) => {
 });
 
 mongoose.connect(
-  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/todos-app`,
+  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/todos-app?authSource=admin`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
