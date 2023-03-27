@@ -10,6 +10,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req,res) => { 
+  res.send("POTANGINA Mo")
+})
+
 app.get("/todos", async (req, res) => {
   const todos = await Todo.find();
   return res.status(200).json({
